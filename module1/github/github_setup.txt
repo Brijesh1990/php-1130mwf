@@ -19,4 +19,11 @@ step 5: github all command to send data from local pc to github server
         b)git add .
         c)git commit -m '25-12-2023 all data uloaded'
         d)git remote add origin https://github.com/Brijesh1990/php-1130mwf.git
-        e) git push -u origin master          
+        e) git push -u origin master     
+
+
+    how to download github data using command
+
+
+        a) git clone https://github.com/Brijesh1990/php-1130mwf.git 
+       
