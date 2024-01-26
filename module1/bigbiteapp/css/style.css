@@ -109,7 +109,7 @@ height: 220px;
 }
 .form-control 
 {
-    width: 380px !important;
+    width: 50% !important;
     height: auto !important;
     margin: 0 !important;
     padding: 7px !important;
