@@ -5,7 +5,7 @@ if(isset($_POST["log"]))
 {
     $em=$_POST["email"];
     $pwd=$_POST["password"];
-    if($em=='bkpandey@gmail.com' && $pwd=='b1234')
+    if($em=='bkpandey@gmail.com' && $pwd=='b123456')
     {
         if(!empty($_POST["remember"]))
         {
