@@ -1,8 +1,12 @@
 <?php 
-// when we create any method as final we can not override any another method 
+/* when we completed any applications using same function pass with same arguments there we used method overriding.
+
+
+*/
+
 class A 
 {
-    public final function display($a,$b)
+    function display($a,$b)
     {
         $c=$a+$b;
         echo "Additions of numbers is :".$c;
@@ -12,7 +16,7 @@ class A
 
 class B extends A 
 {
-  public function display($a,$b)
+    function display($a,$b)
     {
         $c=$a*$b;
         echo "Multiplications  of numbers is :".$c;
