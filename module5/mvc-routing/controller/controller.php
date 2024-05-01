@@ -37,6 +37,7 @@ class controller extends model
                     break;
                 default :
                 require_once("index.php");
+                require_once("header.php");
                 require_once("404.php");
                 require_once("footer.php");
                 require_once("login.php");
