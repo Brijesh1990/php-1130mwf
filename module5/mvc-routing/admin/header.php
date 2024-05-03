@@ -14,7 +14,8 @@ $baseurl="http://localhost/php-1130mwf/module5/mvc-routing/admin/assets/";
         <title>Burger King | Dashboard</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="<?php echo $baseurl;?>css/styles.css" rel="stylesheet" />
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- bvalidator for validations stylesheet files -->
+        <link href="<?php echo $baseurl;?>css/gray.css" rel="stylesheet" />
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">

@@ -3,7 +3,7 @@ what is mysql ?
   mysql is used to create database connection 
   mysql is case-senstive
   mysql provides connection string 
-  mysql is provides some function of database  connection
+  mysql is provides some function of database for connection
 
 
 what is mysqli ?
@@ -34,17 +34,17 @@ what is mysqli ?
        
         $query=mysqli_query($con,$insert);
 
-        Note : execute a query 
+        Note : execute a query is compalsaory
 
     3) how to fetch a data or select a data 
 
         $select="select * from tablename";
         $query=mysqli_query($con,$select);
         
-        $fetch=mysqli_fetch_array($query);  //fetch data in array 
-        $fetch=mysqli_fetch_assoc($query);  //fetch data in associative array 
+        $fetch=mysqli_fetch_array($query);   //fetch data in array 
+        $fetch=mysqli_fetch_assoc($query);   //fetch data in associative array 
         $fetch=mysqli_fetch_object($query);  //fetch data in object 
-        $fetch=mysqli_num_rows($query);  //check number of rows  
+        $fetch=mysqli_num_rows($query);      //check number of rows  
 
 
     4) how to check connection 
@@ -86,8 +86,6 @@ what is difference b/w sql and mysql ?
               mysql is stored informations 
 
           
-
-
  what is difference b/w RDBMS & DBMS  
 
      RDBMS : stands for relational  database managements 

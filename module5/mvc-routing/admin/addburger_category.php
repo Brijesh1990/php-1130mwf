@@ -1,3 +1,13 @@
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<!-- bvalidator jquery files -->
+<script src="<?php echo $baseurl;?>js/jquery.bvalidator.min.js"></script>
+<script src="<?php echo $baseurl;?>js/default.min.js"></script>
+<script src="<?php echo $baseurl;?>js/gray.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#frm").bValidator();
+    })
+</script>
 <div id="layoutSidenav_content">
 <main>
 <div class="container-fluid px-4">
@@ -9,15 +19,15 @@
 Add Burger Category
 </div>
 <div class="card-body">
-<form>
+<form method="post" id="frm">
 <div class="form-group mt-3">
     <label class="text-success">Enter Burger CategoryName </label>
-    <input type="text" name="categoryname" placeholder="Burger Category"  class="form-control mt-2">
+    <input type="text" name="categoryname" placeholder="Burger Category" data-bvalidator="required" class="form-control mt-2">
 </div>
 
 <div class="form-group mt-3">
     <label class="text-success">Added Date </label>
-    <input type="date" name="added_date" placeholder="Added Date"  class="form-control mt-2">
+    <input type="date" name="added_date" placeholder="Added Date" data-bvalidator="required"  class="form-control mt-2">
 </div>
 
 
