@@ -19,7 +19,7 @@
 Add Burger Food
 </div>
 <div class="card-body">
-<form method="post" id="frm1">
+<form method="post" id="frm1" enctype="multipart/form-data">
 
 <div class="form-group mt-3">
 <label class="text-success">Select Burger CategoryName </label>

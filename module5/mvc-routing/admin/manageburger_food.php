@@ -39,23 +39,28 @@ Manage All burger Food
 </tr>
 </tfoot>
 <tbody>
+<?php 
+foreach($shwfood as $row)
+{
+?>
 <tr>
-<td>1001</td>
-<td>Burger with combo</td>
-<td>Burger mania</td>
-<td><img src="https://img.etimg.com/thumb/width-640,height-480,imgsize-731189,resizemode-75,msid-72863458/markets/stocks/news/burger-king-india-could-be-a-better-treat-than-mcdonalds-franchisee/burger-thnkstck.jpg" class="img-fluid w-25"></td>
-<td>Burger mania</td>
-<td>Burger mania</td>
-<td>Burger mania</td>
-<td>Burger mania</td>
-<td>01-05-2024</td>
+<td><?php echo $row["food_id"];?></td>
+<td><?php echo $row["categoryname"];?></td>
+<td><?php echo $row["foodname"];?></td>
+<td><img src="<?php echo $row["photo"];?>" class="img-fluid w-25"></td>
+<td><?php echo $row["qty"];?></td>
+<td><?php echo $row["oldprice"];?></td>
+<td><?php echo $row["newprice"];?></td>
+<td><?php echo $row["descriptions"];?></td>
+<td><?php echo $row["addeddate"];?></td>
 <td>
 <div style="min-width:100px">
 <a href=""><span class="fa fa-trash btn btn-danger bg-danger text-white"></span></a> | <a href=""><span class="fa fa-edit btn btn-primary bg-primary text-white"></span></a></td>
 </div>
 </tr>
-<tr>
-
+<?php 
+}
+?>
 </tbody>
 </table>
 </div>

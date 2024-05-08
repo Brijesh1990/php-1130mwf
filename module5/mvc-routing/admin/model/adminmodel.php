@@ -47,6 +47,19 @@ class adminmodel
         return $arr;
     }
 
+     // create a member function for select and jin tables
+     public function selectjoin($table,$table1,$where)
+     {
+        $select="select * from $table join $table1 on $where";
+        $query=mysqli_query($this->conn,$select);
+        while($fetch=mysqli_fetch_array($query))
+        {
+             $arr[]=$fetch;
+
+        }
+        return $arr;
+     }
+
     //create a member function for admin login 
 
     public function adminlogin($table,$email,$password)

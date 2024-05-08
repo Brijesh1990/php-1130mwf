@@ -5,6 +5,8 @@ class controller extends model
     public function __construct()
     {
          parent:: __construct();
+        //display all food inside of customers panel  
+         $shwfood=$this->selectalldata('tbl_addfood');
         //load a view index content
         if(isset($_SERVER["PATH_INFO"]))
         {

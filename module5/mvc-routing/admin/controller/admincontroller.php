@@ -25,9 +25,6 @@ window.location='addburger-category';
 }
 // fetch food category data
 $cat=$this->selectalldata('tbl_addburgercategory');
-// echo $cat; exit();
-// print_r($cat);
-// add burger food inside of admin add food form
 
 // admin logged in logic 
 if(isset($_POST["login_btn"]))
@@ -53,6 +50,37 @@ window.location='./';
 }
 
 }
+
+// add food of burger
+if(isset($_POST["add-food"]))
+{
+$catnm=$_POST["categoryname"];
+$burgername=$_POST["burgername"];
+// upload images
+$tmp_name=$_FILES["photo"]["tmp_name"];
+$path="uploads/".$_FILES["photo"]["name"];
+$type=$_FILES["photo"]["type"];
+$size=$_FILES["photo"]["size"]/1024;
+move_uploaded_file($tmp_name,$path);
+$qty=$_POST["qty"];
+$oldprice=$_POST["old-price"];
+$newprice=$_POST["new-price"];
+$details=$_POST["details"];
+$addate=$_POST["added_date"];
+$data=array("category_id"=>$catnm,"foodname"=>$burgername,"photo"=>$path,"qty"=>$qty,"oldprice"=>$oldprice,"newprice"=>$newprice,"descriptions"=>$details,"addeddate"=>$addate);
+$chk=$this->insertalldata('tbl_addfood',$data);
+if($chk)
+{
+echo "<script>
+alert('Your Food added successfully')
+window.location='addburger-food';
+</script>";
+}
+
+}
+
+// manage all burger food 
+$shwfood=$this->selectjoin('tbl_addfood','tbl_addburgercategory','tbl_addfood.category_id=tbl_addburgercategory.category_id');
 
 // create a logic for logout as admin
 if(isset($_GET["logout-here"]))
@@ -91,10 +119,7 @@ if(isset($_POST["change-pass"]))
         </script>";
     }
 }
-if(isset($_POST[""]))
-{
-$this->insertalldata('tbl_addfood',$data);
-}
+
 
 //load a view index content
 if(isset($_SERVER["PATH_INFO"]))
@@ -112,15 +137,14 @@ require_once("header.php");
 require_once("sidebar.php");
 require_once("dashboard.php");
 require_once("footer.php");
+break;
 case '/change-password':
 require_once("index.php");
 require_once("header.php");
 require_once("sidebar.php");
 require_once("changepassword.php");
 require_once("footer.php");
-
 break;
-
 case '/addburger-category':
 require_once("index.php");
 require_once("header.php");

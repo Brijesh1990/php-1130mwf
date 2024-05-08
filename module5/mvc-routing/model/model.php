@@ -16,6 +16,18 @@ class model
 
         }
     }
+      // create a member function for select all data
+      public function selectalldata($table)
+      {
+          $select="select * from $table";
+          $query=mysqli_query($this->conn,$select);
+          while($fetch=mysqli_fetch_array($query))
+          {
+               $arr[]=$fetch;
+  
+          }
+          return $arr;
+      }
 }
 
 ?>

@@ -23,37 +23,22 @@
         </div>
         <div class="col-md-7 ms-5 shadow p-4">
             <div class="row">
+               <?php 
+                foreach($shwfood as  $row)
+                {
+               ?>
                 <div class="col-md-6">
-                    <p class="text-center"><img src="<?php echo $baseurl;?>/images/food1.png" class="img-fluid" style="width:200px; height:220px"></p>
-                    <p class="text-center h4">Hot Dog Burger</p>
-                    <p class="text-center h5"><del>Rs.85</del>&nbsp; Rs.65</p>
+                    <p class="text-center"><img src="admin/<?php echo  $row["photo"];?>" class="img-fluid" style="width:200px; height:220px"></p>
+                    <p class="text-center h4"><?php echo  $row["foodname"];?></p>
+                    <p class="text-center h5"><del>Rs.<?php echo  $row["oldprice"];?></del>&nbsp; Rs.<?php echo  $row["newprice"];?></p>
                     <p class="text-center"><button type="button" class="btn btn-dark text-white ord">Order Now <span class="bi bi-truck"></span></button></p>
                     
                 </div>
 
-                <div class="col-md-6">
-                    <p class="text-center"><img src="<?php echo $baseurl;?>/images/food2.png" class="img-fluid" style="width:200px; height:220px"></p>
-                    <p class="text-center h4">Hot Dog Burger</p>
-                    <p class="text-center h5"><del>Rs.75</del>&nbsp; Rs.55</p>
-                    <p class="text-center"><button type="button" class="btn btn-dark text-white ord">Order Now <span class="bi bi-truck"></span></button></p>
-                    
-                </div>
-
-                <div class="col-md-6 mt-3">
-                    <p class="text-center"><img src="<?php echo $baseurl;?>/images/food3.jpg" class="img-fluid" style="width:200px; height:220px"></p>
-                    <p class="text-center h4">Hot Dog Burger</p>
-                    <p class="text-center h5"><del>Rs.85</del>&nbsp; Rs.65</p>
-                    <p class="text-center"><button type="button" class="btn btn-dark text-white ord">Order Now <span class="bi bi-truck"></span></button></p>
-                    
-                </div>
-
-                <div class="col-md-6 mt-3">
-                    <p class="text-center"><img src="<?php echo $baseurl;?>/images/food4.jpg" class="img-fluid" style="width:200px; height:220px"></p>
-                    <p class="text-center h4">Hot Dog Burger</p>
-                    <p class="text-center h5"><del>Rs.75</del>&nbsp; Rs.55</p>
-                    <p class="text-center"><button type="button" class="btn btn-dark text-white ord">Order Now <span class="bi bi-truck"></span></button></p>
-                    
-                </div>
+                <?php 
+                }
+                ?>
+         
             </div>
         </div>
     </div>

@@ -28,13 +28,19 @@ Manage All burger category
 </tr>
 </tfoot>
 <tbody>
+<?php 
+foreach($cat as $cat1)
+{
+?>
 <tr>
-<td>1001</td>
-<td>Burger with combo</td>
-<td>01-05-2024</td>
+<td><?php echo $cat1["category_id"];?></td>
+<td><?php echo $cat1["categoryname"];?></td>
+<td><?php echo $cat1["added_date"];?></td>
 <td><a href=""><span class="fa fa-trash btn btn-danger bg-danger text-white"></span></a> | <a href=""><span class="fa fa-edit btn btn-primary bg-primary text-white"></span></a></td>
 </tr>
-<tr>
+<?php 
+}
+?>
 
 </tbody>
 </table>
