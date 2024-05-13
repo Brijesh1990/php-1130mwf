@@ -6,7 +6,7 @@
                     <img src="https://media0.giphy.com/media/DnWU2cQ99Jr6JbmPWM/giphy.gif?cid=6c09b952v4m6xcxe4h5ps4mweq38cehhgtu96448pzbkzt1j&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g" class="img-fluid">
                 </div>
                 <div class="col-md-8">
-                    <form>
+                    <form method="post">
                       
                         <div class="input-group mt-3">
                             <input type="text" name="email" placeholder="Email *"  required class="form-control">

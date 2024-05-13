@@ -31,7 +31,7 @@
                     <p class="text-center"><img src="admin/<?php echo  $row["photo"];?>" class="img-fluid" style="width:200px; height:220px"></p>
                     <p class="text-center h4"><?php echo  $row["foodname"];?></p>
                     <p class="text-center h5"><del>Rs.<?php echo  $row["oldprice"];?></del>&nbsp; Rs.<?php echo  $row["newprice"];?></p>
-                    <p class="text-center"><button type="button" class="btn btn-dark text-white ord">Order Now <span class="bi bi-truck"></span></button></p>
+                    <p class="text-center"><a href="<?php echo $mainurl;?>foodsdetails?fooddetails=<?php echo base64_encode($row["food_id"]);?>"><button type="button" class="btn btn-dark text-white ord">click for details <span class="bi bi-truck"></span></button></a></p>
                     
                 </div>
 
