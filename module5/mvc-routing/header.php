@@ -45,12 +45,12 @@ else
 <ul class="nav-links">
 <li class="dropdown"><a class="dropdown-toggle" data-bs-toggle="dropdown" href="">Welcome:<?php echo ucfirst($_SESSION["name"]);?> <span class="bi bi-person"></span></a>
 <ul class="dropdown-menu bg-dark p-4 mt-1" style="min-width:220px !important">
-<li><a href="">Manage Profile <span class="bi bi-person"></a></li>
+<li><a href="<?php echo $mainurl;?>manage-profile">Manage Profile <span class="bi bi-person"></a></li>
 <li><a href="">Manage Notification <span class="bi bi-person"></a></li>
 <li><a href="">Manage Orders <span class="bi bi-person"></a></li>
 <li><a href="">Delete Account <span class="bi bi-person"></a></li>
 <li><a href="">Change Password <span class="bi bi-person"></a></li>
-<li><a href="" class="btn btn-danger btn-sm text-white">Logout <span class="bi bi-power"></a></li>
+<li><a href="<?php echo $mainurl;?>?logout-here" class="btn btn-danger btn-sm text-white">Logout <span class="bi bi-power"></a></li>
 </ul>
 </li>
 </ul>   

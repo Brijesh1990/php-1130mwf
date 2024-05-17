@@ -81,7 +81,15 @@ else
 return false;
 }
 }
-
+// create a member function for logout as customers
+public function logout()
+{
+    unset($_SESSION["customer_id"]);
+    unset($_SESSION["name"]);
+    unset($_SESSION["email"]);
+    session_destroy();
+    return true;
+}
 
 }
 
