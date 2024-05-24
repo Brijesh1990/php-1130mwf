@@ -1,4 +1,5 @@
 <?php 
+//error_reporting(0);
 require_once("model/model.php");
 class controller extends model 
 {
@@ -106,6 +107,23 @@ window.location='./viewcart';
 }
 }
 
+// view cart added by customers
+if(isset($_SESSION["customer_id"]))
+{   $id=$_SESSION["customer_id"];
+    $shwcart=$this->joindata('tbl_cart','tbl_customer','tbl_addfood','tbl_cart.customer_id=tbl_customer.customer_id','tbl_cart.food_id=tbl_addfood.food_id','customer_id',$id);
+}
+// count in cart
+if(isset($_SESSION["customer_id"]))
+{
+    $id=$_SESSION["customer_id"];
+    $totalcount=$this->selectcount('tbl_cart','cart_id','customer_id',$id);
+}
+// total of subtotal in cart
+if(isset($_SESSION["customer_id"]))
+{
+    $id=$_SESSION["customer_id"];
+    $subtotal=$this->selectsubtotal('tbl_cart','subtotal','customer_id',$id);
+}
 // logout as customers
 if(isset($_GET["logout-here"]))
 {

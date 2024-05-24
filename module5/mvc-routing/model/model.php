@@ -81,6 +81,45 @@ else
 return false;
 }
 }
+
+// create a member function for join tables 
+public function joindata($table,$table1,$table2,$where,$where1,$column,$id)
+{
+  $select="select * from $table join $table1 on $where join $table2 on $where1 where $table1.$column='$id'";
+   $query=mysqli_query($this->conn,$select);
+   while($fetch=mysqli_fetch_array($query))
+  {
+   $arr[]=$fetch;
+
+  }
+  return $arr;
+ 
+}
+// create a member function for count
+public function selectcount($table,$column,$column1,$id)
+{
+$select="select count($column) as total from $table where $column1='$id'";
+$query=mysqli_query($this->conn,$select);
+while($fetch=mysqli_fetch_array($query))
+{
+$arr[]=$fetch;
+
+}
+return $arr;
+}
+
+// create a member function for total of subtotal
+public function selectsubtotal($table,$column,$column1,$id)
+{
+$select="select sum($column) as total from $table where $column1='$id'";
+$query=mysqli_query($this->conn,$select);
+while($fetch=mysqli_fetch_array($query))
+{
+$arr[]=$fetch;
+
+}
+return $arr;
+}
 // create a member function for logout as customers
 public function logout()
 {

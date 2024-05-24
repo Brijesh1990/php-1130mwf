@@ -13,9 +13,21 @@ foreach($shwcat as $shwcat1)
 }
 ?>
 <li><a href="<?php echo $mainurl;?>feedback-us">Feedback</a></li>
-
+<?php 
+if(!isset($_SESSION["customer_id"]))
+{
+?>
 <li class="ms-2"><a href="#"><span class="bi bi-cart fs-5"><span class="badge badge-sm bg-danger fs-0">0</span></span></a>
 </li>
-    
+<?php 
+}
+else 
+{
+?>
+<li class="ms-2"><a href="<?php echo $mainurl;?>viewcart"><span class="bi bi-cart fs-5"><span class="badge badge-sm bg-danger fs-0"><?php echo $totalcount[0]["total"];?></span></span></a>
+</li>
+<?php 
+}
+?>    
 </ul>
 </nav>
