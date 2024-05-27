@@ -1,6 +1,9 @@
 <?php 
 //error_reporting(0);
 require_once("model/model.php");
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 class controller extends model 
 {
 public function __construct()
@@ -110,19 +113,120 @@ window.location='./viewcart';
 // view cart added by customers
 if(isset($_SESSION["customer_id"]))
 {   $id=$_SESSION["customer_id"];
-    $shwcart=$this->joindata('tbl_cart','tbl_customer','tbl_addfood','tbl_cart.customer_id=tbl_customer.customer_id','tbl_cart.food_id=tbl_addfood.food_id','customer_id',$id);
+$shwcart=$this->joindata('tbl_cart','tbl_customer','tbl_addfood','tbl_cart.customer_id=tbl_customer.customer_id','tbl_cart.food_id=tbl_addfood.food_id','customer_id',$id);
 }
 // count in cart
 if(isset($_SESSION["customer_id"]))
 {
-    $id=$_SESSION["customer_id"];
-    $totalcount=$this->selectcount('tbl_cart','cart_id','customer_id',$id);
+$id=$_SESSION["customer_id"];
+$totalcount=$this->selectcount('tbl_cart','cart_id','customer_id',$id);
 }
 // total of subtotal in cart
 if(isset($_SESSION["customer_id"]))
 {
-    $id=$_SESSION["customer_id"];
-    $subtotal=$this->selectsubtotal('tbl_cart','subtotal','customer_id',$id);
+$id=$_SESSION["customer_id"];
+$subtotal=$this->selectsubtotal('tbl_cart','subtotal','customer_id',$id);
+}
+//provides feedback and get emailed also
+if(isset($_POST["feedback_us"])) 
+{
+
+//Create an instance; passing `true` enables exceptions
+try {
+
+require_once("PHPMailer/PHPMailer.php");
+require_once("PHPMailer/SMTP.php");
+require_once("PHPMailer/Exception.php");
+$mail =new PHPMailer(true);
+$name=$_POST["name"];
+$em=$_POST["email"];
+$ph=$_POST["phone"];
+$rat=$_POST["rating"];
+$comm=$_POST["comment"];       
+//Server settings
+$mail->SMTPDebug =false;                      //Enable verbose debug output
+$mail->isSMTP();                                            //Send using SMTP
+$mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+$mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+$mail->Username   = 'brijeshpandey.tops@gmail.com';                     //SMTP username
+$mail->Password   = 'wejr qumk sicz zvbn';                               //SMTP password
+$mail->SMTPSecure = "tls";            //Enable implicit TLS encryption
+$mail->Port       = 587;                                    //465 TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+//set from
+$mail->setFrom($_POST["email"], 'sending email');
+$mail->addAddress('brijeshpandey.tops@gmail.com', 'Joe User');     //Add a recipient
+//Content
+$mail->isHTML(true);                                  //Set email format to HTML
+$mail->Subject = 'Feedback data Details';
+$mail->Body    = '<img src="https://i.pinimg.com/originals/b8/f0/31/b8f031416b8f5db62f735c70f75365da.gif" style="width:70%; height:300px">'.'The name of customers :'.$_POST["name"]."<br>".'Email of Customers :'.$_POST["email"]."<br>".'Phone of customers '.$_POST["phone"]."<br>".'Customers provides rating '.$_POST["rating"]."<br>".'Comment by customers '.$_POST["comment"];
+//$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+$data=array("name"=>$name,"email"=>$em,"phone"=>$ph,"rating"=>$rat,"comment"=>$comm);
+$chk=$this->insertalldata('tbl_feedback',$data);
+
+if($chk)
+{
+$mail->send();    
+echo "<script>
+alert('Thanks for provideing your valuable feedback we will get in touch with you soon')
+window.location='./feedback-us';
+</script>";
+}
+} catch (Exception $e) {
+echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}
+
+}
+
+// forget password 
+if(isset($_POST["frg_pass"]))
+{    
+//Create an instance; passing `true` enables exceptions
+try {
+
+    require_once("PHPMailer/PHPMailer.php");
+    require_once("PHPMailer/SMTP.php");
+    require_once("PHPMailer/Exception.php");
+    $mail =new PHPMailer(true);
+    $email=$_POST["email"];
+    //Server settings
+    $mail->SMTPDebug =false;                      //Enable verbose debug output
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'brijeshpandey.tops@gmail.com';                     //SMTP username
+    $mail->Password   = 'wejr qumk sicz zvbn';                               //SMTP password
+    $mail->SMTPSecure = "tls";            //Enable implicit TLS encryption
+    $mail->Port       = 587;                                    //465 TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    //set from
+    $mail->setFrom($_POST["email"], 'sending email');
+    $mail->addAddress('brijeshpandey.tops@gmail.com', 'Joe User');     //Add a recipient
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = 'Forget Password Get your password in email';
+    
+    $pass=$this->frgpassword('tbl_customer','password',$email);
+    
+    $mail->Body = "<h4 style='color:green'>Your Forget Password of email is :</h4>".$pass;
+    
+    if($pass)
+    {
+    $mail->send();    
+    echo "<script>
+    alert('we will send your password in your email address Please checked your email')
+    window.location='./';
+    </script>";
+    }
+    else 
+    {
+        echo "<script>
+        alert('This email is not Register with us please try with register email address')
+        window.location='./forgetpassword';
+        </script>";
+    }
+    } catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    }
+
 }
 // logout as customers
 if(isset($_GET["logout-here"]))
@@ -158,6 +262,15 @@ require_once("index.php");
 require_once("header.php");
 require_once("navbar.php");
 require_once("feedback.php");
+require_once("footer.php");
+require_once("login.php");
+break;
+
+case '/forgetpassword':
+require_once("index.php");
+require_once("header.php");
+require_once("navbar.php");
+require_once("forgetpassword.php");
 require_once("footer.php");
 require_once("login.php");
 break;

@@ -11,6 +11,7 @@
 <th>Price</th>
 <th>qty</th>
 <th>Total</th>
+<th>AddedDate</th>
 <th>Action</th>
 </tr>
 <?php 
@@ -24,6 +25,7 @@ foreach( $shwcart as $row)
 <td><?php echo $row["price"];?></td>
 <td><?php echo $row["quantity"];?></td>
 <td><?php echo $row["subtotal"];?></td>
+<td><?php echo $row["addeddate"];?></td>
 <td><a href="" class="btn btn-danger btn-sm text-white"><span class="bi bi-trash text-white"></span></a></td> 
 </tr>
 <?php 

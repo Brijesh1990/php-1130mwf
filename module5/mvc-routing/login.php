@@ -17,7 +17,7 @@
             
                     <div class="input-group mt-3">
                     <input type="submit" name="login" value="Login" class="btn btn-md btn-dark text-white">
-                    <b>&nbsp; <a href="">Forget Password ?</a></b>
+                    <b>&nbsp; <a href="<?php echo $mainurl;?>forgetpassword">Forget Password ?</a></b>
                     </div>
 
                     <div class="input-group mt-3">

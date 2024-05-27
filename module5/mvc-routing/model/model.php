@@ -108,6 +108,24 @@ $arr[]=$fetch;
 return $arr;
 }
 
+// create a member function for forget password
+public function frgpassword($table,$column,$email)
+{
+$select="select $column from $table where email='$email'";
+$query=mysqli_query($this->conn,$select);
+$fetch=mysqli_fetch_array($query);
+$num_rows=mysqli_num_rows($query);
+if($num_rows==1)
+{
+$pass=base64_decode($fetch["password"]);
+return $pass;
+}
+else 
+{
+  return false;
+}
+}
+
 // create a member function for total of subtotal
 public function selectsubtotal($table,$column,$column1,$id)
 {
