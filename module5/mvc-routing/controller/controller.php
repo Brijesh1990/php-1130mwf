@@ -228,6 +228,24 @@ try {
     }
 
 }
+
+// delete xart from cart tables 
+if(isset($_GET["deletecartid"]))
+{
+$deleteid=$_GET["deletecartid"];
+$id=array("cart_id"=>$deleteid);
+$chk=$this->deletedata('tbl_cart',$id);
+
+if($chk)
+{
+    
+echo "<script>
+alert('Your cart removed successfully')
+window.location='./viewcart';
+</script>";
+}
+
+}
 // logout as customers
 if(isset($_GET["logout-here"]))
 {
@@ -315,6 +333,29 @@ require_once("navbar.php");
 require_once("viewcart.php");
 require_once("footer.php");
 break;
+case '/checkout-here':
+require_once("index.php");
+require_once("header.php");
+require_once("navbar.php");
+require_once("checkout.php");
+require_once("footer.php");
+break;
+case '/success':
+require_once("index.php");
+require_once("header.php");
+require_once("navbar.php");
+require_once("success.php");
+require_once("footer.php");
+break;
+
+case '/failure':
+require_once("index.php");
+require_once("header.php");
+require_once("navbar.php");
+require_once("failure.php");
+require_once("footer.php");
+break;
+
 default :
 require_once("index.php");
 require_once("header.php");

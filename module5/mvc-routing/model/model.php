@@ -138,14 +138,30 @@ $arr[]=$fetch;
 }
 return $arr;
 }
+
+// delete particular  data
+public function deletedata($table,$id)
+{
+
+$key=array_keys($id);
+$key1=implode(',',$key);
+$value=array_values($id);
+$value1=implode("','",$value);
+$delete="delete from  $table where $key1='$value1'";
+// echo $insert; exit();
+$query=mysqli_query($this->conn,$delete);
+// echo $query; exit();
+return $query;
+} 
+
 // create a member function for logout as customers
 public function logout()
 {
-    unset($_SESSION["customer_id"]);
-    unset($_SESSION["name"]);
-    unset($_SESSION["email"]);
-    session_destroy();
-    return true;
+unset($_SESSION["customer_id"]);
+unset($_SESSION["name"]);
+unset($_SESSION["email"]);
+session_destroy();
+return true;
 }
 
 }
