@@ -92,6 +92,35 @@ window.location='./';
 </script>";
 }
 
+// edit food category in admin
+if(isset($_GET["editcatid"]))
+{
+    $edid=$_GET["editcatid"];
+    $edcat=$this->editalldata('tbl_addburgercategory','category_id',$edid);
+}
+
+// update category food
+if(isset($_POST["update-category"]))
+{
+ $edid=$_GET["editcatid"];
+ $where=array("category_id",$edid);
+ $catnm=$_POST["categoryname"];
+ $date=$_POST["added_date"];
+ $data=array("categoryname"=>$catnm,"added_date"=>$date);
+ $chk=$this->upddata('tbl_addburgercategory',$data,$where,'category_id',$edid);
+ if($chk)
+{
+echo "<script>
+alert('Your Food category successfully updated')
+window.location='./manageburger-category';
+</script>";
+}
+
+
+
+}
+
+
 // logic for change password of admin
 if(isset($_POST["change-pass"]))
 {
@@ -153,15 +182,23 @@ require_once("addburger_category.php");
 require_once("footer.php");
 
 break;
+
 case '/manageburger-category':
 require_once("index.php");
 require_once("header.php");
 require_once("sidebar.php");
 require_once("manageburger_category.php");
 require_once("footer.php");
-
 break;
 
+case '/editcategory':
+require_once("index.php");
+require_once("header.php");
+require_once("sidebar.php");
+require_once("editcategory.php");
+require_once("footer.php");
+break;
+    
 
 case '/addburger-food':
 require_once("index.php");

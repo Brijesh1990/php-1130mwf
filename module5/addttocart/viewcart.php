@@ -11,16 +11,16 @@
 <th>Qty</th>
 <th>Action</th>
 </tr>
-<?php 
+<?php
+// $count=0; 
+$count=1; 
 foreach($shwcart as $row)
 {
-$count=0;
-if($count==0)
-{    
-$count=$count+1;
+// $count=$count+1;
 ?>
 <tr>
-<td><?php echo $count;?></td>
+<!-- <td><?php echo $row["cartid"];?></td> -->
+ <td><?php echo $count;?>
 <td><img src="<?php echo $row["photo"];?>" class="img-fluid" style="width:80px; height:80px"></td>
 <td><?php echo $row["productname"];?></td>
 <td><?php echo $row["price"];?></td>
@@ -28,8 +28,9 @@ $count=$count+1;
 <td><a href="<?php echo $row["cartid"];?>"><span class="bi bi-trash text-danger"></span></a></td>
 </tr>
 <?php 
+$count++;
 }
-}
+
 ?>
 </table>
 
