@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +13,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/',function()
-{
-  return view('calculator');
-});
+
+// calculator routing here
+// Route::get('/',function()
+// {
+//   // return view('calculator/calculator');
+//   return view('calculator.calculator');
+// });
+
+// crud operations view routing here
+Route::get('/',[HomeController::class,'index']);
