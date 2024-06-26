@@ -1,7 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
+// use App\Http\Controllers\HomeController;
+// use App\Http\Controllers\ContactController;
+// use App\Http\Controllers\CreateAccountController;
+use App\Http\Controllers\customer\CustomerHomeController;
+use App\Http\Controllers\customer\AboutController;
+use App\Http\Controllers\customer\ContactController;
+use App\Http\Controllers\customer\ProductsController;
+use App\Http\Controllers\customer\ProductsDescriptionsController;
+use App\Http\Controllers\customer\CheckoutController;
+use App\Http\Controllers\customer\PaymentsController;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +34,17 @@ use App\Http\Controllers\HomeController;
 // });
 
 // crud operations view routing here
-Route::get('/',[HomeController::class,'index']);
+// Route::get('/',[HomeController::class,'index']);
+// Route::get('/contact-us',[ContactController::class,'index']);
+// Route::get('/create-account',[CreateAccountController::class,'index']);
+
+// ecommerce templates routing here
+
+Route::get('/',[CustomerHomeController::class,'index']);
+Route::get('/about-us',[AboutController::class,'index']);
+Route::get('/contact-us',[ContactController::class,'index']);
+Route::get('/products',[ProductsController::class,'index']);
+Route::get('/products-descriptions',[ProductsDescriptionsController::class,'index']);
+Route::get('/checkout',[CheckoutController::class,'index']);
+
+// admin panel templates integrations routing here

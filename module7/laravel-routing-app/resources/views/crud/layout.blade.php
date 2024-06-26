@@ -22,7 +22,7 @@
 <div class="col-md-3"><h4>Call Us:(+91)9998003879</h4></div>
 <div class="col-md-6 ms-3"><input type="text" placeholder="search anything here" class="form-control" /></div>
 <div class="col-md-2 ms-3">
-<button type="button" class="btn btn-md btn-dark bg-dark text-white">CreateAccount</button>
+<a href="/create-account"><button type="button" class="btn btn-md btn-dark bg-dark text-white">CreateAccount</button></a>
 </div>
 </div>
 </div>
@@ -31,11 +31,11 @@
 <nav class="nav navbar navbar-expand-md p-2 bg-dark text-white">
 <a href="" class="navbar-brand ms-4 text-white">Laravel Crud App</a>
 <ul class="navbar-link">
-<li><a href="#">Home</a></li>
-<li><a href="#">About</a></li>
-<li><a href="#">AddEmployee</a></li>
+<li><a href="/">Home</a></li>
+<li><a href="/about-us">About</a></li>
+<li><a href="#" data-bs-toggle="modal" data-bs-target="#ademp">AddEmployee</a></li>
 <li><a href="#">Manage Employee</a></li>
-<li><a href="#">Contact us</a></li>
+<li><a href="/contact-us">Contact us</a></li>
 </ul>
 </nav>
 <!-- content start here -->
