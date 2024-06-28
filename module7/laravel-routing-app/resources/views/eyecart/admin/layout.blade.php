@@ -1,35 +1,31 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+
 <!DOCTYPE html>
 <head>
-<title>Visitors an Admin Panel Category Bootstrap Responsive Website Template | Chartjs :: w3layouts</title>
+<title>Visitors an Admin Panel Category Bootstrap Responsive Website Template | @yield('title_name')</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- bootstrap-css -->
-<link rel="stylesheet" href="css/bootstrap.min.css" >
+<link rel="stylesheet" href="{{ asset('assets/eye/admin/css/bootstrap.min.css')}}" >
 <!-- //bootstrap-css -->
 <!-- Custom CSS -->
-<link href="css/style.css" rel='stylesheet' type='text/css' />
-<link href="css/style-responsive.css" rel="stylesheet"/>
-<link rel="stylesheet" href="css/morris.css">
+<link href="{{ asset('assets/eye/admin/css/style.css')}}" rel='stylesheet' type='text/css' />
+<link href="{{ asset('assets/eye/admin/css/style-responsive.css')}}" rel="stylesheet"/>
 <!-- font CSS -->
 <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 <!-- font-awesome icons -->
-<link rel="stylesheet" href="css/font.css" type="text/css"/>
-<link href="css/font-awesome.css" rel="stylesheet"> 
+<link rel="stylesheet" href="{{ asset('assets/eye/admin/css/font.css')}}" type="text/css"/>
+<link href="{{ asset('assets/eye/admin/css/font-awesome.css')}}" rel="stylesheet"> 
+<link rel="stylesheet" href="{{ asset('assets/eye/admin/css/morris.css')}}" type="text/css"/>
+<!-- calendar -->
+<link rel="stylesheet" href="{{ asset('assets/eye/admin/css/monthly.css')}}">
+<!-- //calendar -->
 <!-- //font-awesome icons -->
-<script src="js/jquery2.0.3.min.js"></script>
-<!-- charts -->
-<script src="js/raphael-min.js"></script>
-<script src="js/morris.js"></script>
-<!-- //charts -->
+<script src="{{ asset('assets/eye/admin/js/jquery2.0.3.min.js')}}"></script>
+<script src="{{ asset('assets/eye/admin/js/raphael-min.js')}}"></script>
+<script src="{{ asset('assets/eye/admin/js/morris.js')}}"></script>
 </head>
 <body>
 <section id="container">
@@ -37,16 +33,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <header class="header fixed-top clearfix">
 <!--logo start-->
 <div class="brand">
-
     <a href="index.html" class="logo">
-        VISITORS
+        EyeCart
     </a>
     <div class="sidebar-toggle-box">
         <div class="fa fa-bars"></div>
     </div>
 </div>
 <!--logo end-->
-
 <div class="nav notify-row" id="top_menu">
     <!--  notification start -->
     <ul class="nav top-menu">
@@ -258,95 +252,80 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="leftside-navigation">
             <ul class="sidebar-menu" id="nav-accordion">
                 <li>
-                    <a href="index.html">
+                    <a class="active" href="/admin-login/dashboard">
                         <i class="fa fa-dashboard"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
-                
+                  
+                  <li>
+                    <a href="/admin-login/manage-customers">
+                        <i class="fa fa-users"></i>
+                        <span>Manage Customers </span>
+                    </a>
+                </li>
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-book"></i>
-                        <span>UI Elements</span>
+                        <span>Add Category</span>
                     </a>
                     <ul class="sub">
-						<li><a href="typography.html">Typography</a></li>
-						<li><a href="glyphicon.html">glyphicon</a></li>
-                        <li><a href="grids.html">Grids</a></li>
+						<li><a href="/admin-login/add-category">Add Category</a></li>
+						<li><a href="/admin-login/manage-category">Manage Category</a></li>
+                     
                     </ul>
                 </li>
+
+
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-book"></i>
+                        <span>Add SubCategory</span>
+                    </a>
+                    <ul class="sub">
+						<li><a href="/admin-login/add-subcategory">Add SubCategory</a></li>
+						<li><a href="/admin-login/manage-subcategory">Manage SubCategory</a></li>
+                     
+                    </ul>
+                </li>
+     
+
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-book"></i>
+                        <span>Add Products</span>
+                    </a>
+                    <ul class="sub">
+						<li><a href="/admin-login/add-products">Add Products</a></li>
+						<li><a href="/admin-login/manage-products">Manage Products</a></li>
+                     
+                    </ul>
+                </li>
+        
                 <li>
-                    <a href="fontawesome.html">
-                        <i class="fa fa-bullhorn"></i>
-                        <span>Font awesome </span>
+                    <a href="/admin-login/manage-orders">
+                        <i class="fa fa-users"></i>
+                        <span>Manage Orders </span>
                     </a>
                 </li>
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-th"></i>
-                        <span>Data Tables</span>
+
+                <li>
+                    <a href="/admin-login/manage-reviews">
+                        <i class="fa fa-users"></i>
+                        <span>Manage Reviews </span>
                     </a>
-                    <ul class="sub">
-                        <li><a href="basic_table.html">Basic Table</a></li>
-                        <li><a href="responsive_table.html">Responsive Table</a></li>
-                    </ul>
                 </li>
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-tasks"></i>
-                        <span>Form Components</span>
+
+                <li>
+                    <a href="/admin-login/manage-contacts">
+                        <i class="fa fa-users"></i>
+                        <span>Manage Contacts </span>
                     </a>
-                    <ul class="sub">
-                        <li><a href="form_component.html">Form Elements</a></li>
-                        <li><a href="form_validation.html">Form Validation</a></li>
-						<li><a href="dropzone.html">Dropzone</a></li>
-                    </ul>
-                </li>
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-envelope"></i>
-                        <span>Mail </span>
-                    </a>
-                    <ul class="sub">
-                        <li><a href="mail.html">Inbox</a></li>
-                        <li><a href="mail_compose.html">Compose Mail</a></li>
-                    </ul>
-                </li>
-                <li class="sub-menu">
-                    <a class="active" href="javascript:;">
-                        <i class=" fa fa-bar-chart-o"></i>
-                        <span>Charts</span>
-                    </a>
-                    <ul class="sub">
-                        <li><a class="active" href="chartjs.html">Chart js</a></li>
-                        <li><a href="flot_chart.html">Flot Charts</a></li>
-                    </ul>
-                </li>
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class=" fa fa-bar-chart-o"></i>
-                        <span>Maps</span>
-                    </a>
-                    <ul class="sub">
-                        <li><a href="google_map.html">Google Map</a></li>
-                        <li><a href="vector_map.html">Vector Map</a></li>
-                    </ul>
-                </li>
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-glass"></i>
-                        <span>Extra</span>
-                    </a>
-                    <ul class="sub">
-                        <li><a href="gallery.html">Gallery</a></li>
-						<li><a href="404.html">404 Error</a></li>
-                        <li><a href="registration.html">Registration</a></li>
-                    </ul>
                 </li>
                 <li>
                     <a href="login.html">
-                        <i class="fa fa-user"></i>
-                        <span>Login Page</span>
+                        <i class="fa fa-power-off text-danger"></i>
+                        <span>Logout here</span>
                     </a>
                 </li>
             </ul>            </div>
@@ -355,168 +334,113 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </aside>
 <!--sidebar end-->
 <!--main content start-->
-<section id="main-content">
-	<section class="wrapper">
-		<div class="chart_agile">
-			<div class="col-md-6 chart_agile_left">
-				<div class="chart_agile_top">
-					<div class="chart_agile_bottom">
-						<div id="graph10"></div>
-							<script>
-							var week_data = [
-							  {"period": "2011 W27", "licensed": 3407, "sorned": 660},
-							  {"period": "2011 W26", "licensed": 3351, "sorned": 629},
-							  {"period": "2011 W25", "licensed": 3269, "sorned": 618},
-							  {"period": "2011 W24", "licensed": 3246, "sorned": 661},
-							  {"period": "2011 W23", "licensed": 3257, "sorned": 667},
-							  {"period": "2011 W22", "licensed": 3248, "sorned": 627},
-							  {"period": "2011 W21", "licensed": 3171, "sorned": 660},
-							  {"period": "2011 W20", "licensed": 3171, "sorned": 676},
-							  {"period": "2011 W19", "licensed": 3201, "sorned": 656},
-							  {"period": "2011 W18", "licensed": 3215, "sorned": 622},
-							  {"period": "2011 W17", "licensed": 3148, "sorned": 632},
-							  {"period": "2011 W16", "licensed": 3155, "sorned": 681},
-							  {"period": "2011 W15", "licensed": 3190, "sorned": 667},
-							  {"period": "2011 W14", "licensed": 3226, "sorned": 620},
-							  {"period": "2011 W13", "licensed": 3245, "sorned": null},
-							  {"period": "2011 W12", "licensed": 3289, "sorned": null},
-							  {"period": "2011 W11", "licensed": 3263, "sorned": null},
-							  {"period": "2011 W10", "licensed": 3189, "sorned": null},
-							  {"period": "2011 W09", "licensed": 3079, "sorned": null},
-							  {"period": "2011 W08", "licensed": 3085, "sorned": null},
-							  {"period": "2011 W07", "licensed": 3055, "sorned": null},
-							  {"period": "2011 W06", "licensed": 3063, "sorned": null},
-							  {"period": "2011 W05", "licensed": 2943, "sorned": null},
-							  {"period": "2011 W04", "licensed": 2806, "sorned": null},
-							  {"period": "2011 W03", "licensed": 2674, "sorned": null},
-							  {"period": "2011 W02", "licensed": 1702, "sorned": null},
-							  {"period": "2011 W01", "licensed": 1732, "sorned": null}
-							];
-							Morris.Line({
-							  element: 'graph10',
-							  data: week_data,
-							  xkey: 'period',
-							  ykeys: ['licensed', 'sorned'],
-							  labels: ['Licensed', 'SORN'],
-							  events: [
-								'2011-04',
-								'2011-08'
-							  ]
-							});
-							</script>
 
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6 chart_agile_right">
-				<div class="chart_agile_top">
-					<div class="chart_agile_bottom">
-						<div id="graph11"></div>
-							<script>
-							var neg_data = [
-							  {"period": "2011-08-12", "a": 100},
-							  {"period": "2011-03-03", "a": 75},
-							  {"period": "2010-08-08", "a": 50},
-							  {"period": "2010-05-10", "a": 25},
-							  {"period": "2010-03-14", "a": 0},
-							  {"period": "2010-01-10", "a": -25},
-							  {"period": "2009-12-10", "a": -50},
-							  {"period": "2009-10-07", "a": -75},
-							  {"period": "2009-09-25", "a": -100}
-							];
-							Morris.Line({
-							  element: 'graph11',
-							  data: neg_data,
-							  xkey: 'period',
-							  ykeys: ['a'],
-							  labels: ['Series A'],
-							  units: '%'
-							});
-							</script>
+@yield('content')
 
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6 chart_agile_left">
-				<div class="chart_agile_top">
-					<div class="chart_agile_bottom">
-						<div id="graph1"></div>
-						<script>
-						var nReloads = 0;
-						function data(offset) {
-						  var ret = [];
-						  for (var x = 0; x <= 360; x += 10) {
-							var v = (offset + x) % 360;
-							ret.push({
-							  x: x,
-							  y: Math.sin(Math.PI * v / 180).toFixed(4),
-							  z: Math.cos(Math.PI * v / 180).toFixed(4)
-							});
-						  }
-						  return ret;
-						}
-						var graph = Morris.Line({
-							element: 'graph1',
-							data: data(0),
-							xkey: 'x',
-							ykeys: ['y', 'z'],
-							labels: ['sin()', 'cos()'],
-							parseTime: false,
-							ymin: -1.0,
-							ymax: 1.0,
-							hideHover: true
-						});
-						function update() {
-						  nReloads++;
-						  graph.setData(data(5 * nReloads));
-						  $('#reloadStatus').text(nReloads + ' reloads');
-						}
-						setInterval(update, 100);
-						</script>
-
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6 chart_agile_right">
-				<div class="chart_agile_top">
-					<div class="chart_agile_bottom">
-						<div id="graph4"></div>
-						<script>
-							Morris.Donut({
-							  element: 'graph4',
-							  data: [
-								{value: 70, label: 'foo', formatted: 'at least 70%' },
-								{value: 15, label: 'bar', formatted: 'approx. 15%' },
-								{value: 10, label: 'baz', formatted: 'approx. 10%' },
-								{value: 5, label: 'A really really long label', formatted: 'at most 5%' }
-							  ],
-							  formatter: function (x, data) { return data.formatted; }
-							});
-						</script>
-
-					</div>
-				</div>
-			</div>
-						<div class="clearfix"></div>
-		</div>
-</section>
  <!-- footer -->
-		  <div class="footer">
+		  <div class="footer mt-5" style="margin-top:8%">
 			<div class="wthree-copyright">
-			  <p>© 2017 Visitors. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+			  <p>© 2023-24 Eyecart sell online goggles. All rights reserved | Design by <a href="#">Laravel Teams</a></p>
 			</div>
 		  </div>
   <!-- / footer -->
 </section>
-
 <!--main content end-->
 </section>
-<script src="js/bootstrap.js"></script>
-<script src="js/jquery.dcjqaccordion.2.7.js"></script>
-<script src="js/scripts.js"></script>
-<script src="js/jquery.slimscroll.js"></script>
-<script src="js/jquery.nicescroll.js"></script>
-<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
-<script src="js/jquery.scrollTo.js"></script>
+<script src="{{ asset('assets/eye/admin/js/bootstrap.js')}}"></script>
+<script src="{{ asset('assets/eye/admin/js/jquery.dcjqaccordion.2.7.js')}}"></script>
+<script src="{{ asset('assets/eye/admin/js/scripts.js')}}"></script>
+<script src="{{ asset('assets/eye/admin/js/jquery.slimscroll.js')}}"></script>
+<script src="{{ asset('assets/eye/admin/js/jquery.nicescroll.js')}}"></script>
+<script language="javascript" type="text/javascript" src="{{ asset('assets/eye/admin/js/flot-chart/excanvas.min.js')}}"></script>
+<script src="{{ asset('assets/eye/admin/js/jquery.scrollTo.js')}}"></script>
+<!-- morris JavaScript -->	
+<script>
+	$(document).ready(function() {
+		//BOX BUTTON SHOW AND CLOSE
+	   jQuery('.small-graph-box').hover(function() {
+		  jQuery(this).find('.box-button').fadeIn('fast');
+	   }, function() {
+		  jQuery(this).find('.box-button').fadeOut('fast');
+	   });
+	   jQuery('.small-graph-box .box-close').click(function() {
+		  jQuery(this).closest('.small-graph-box').fadeOut(200);
+		  return false;
+	   });
+	   
+	    //CHARTS
+	    function gd(year, day, month) {
+			return new Date(year, month - 1, day).getTime();
+		}
+		
+		graphArea2 = Morris.Area({
+			element: 'hero-area',
+			padding: 10,
+        behaveLikeLine: true,
+        gridEnabled: false,
+        gridLineColor: '#dddddd',
+        axes: true,
+        resize: true,
+        smooth:true,
+        pointSize: 0,
+        lineWidth: 0,
+        fillOpacity:0.85,
+			data: [
+				{period: '2015 Q1', iphone: 2668, ipad: null, itouch: 2649},
+				{period: '2015 Q2', iphone: 15780, ipad: 13799, itouch: 12051},
+				{period: '2015 Q3', iphone: 12920, ipad: 10975, itouch: 9910},
+				{period: '2015 Q4', iphone: 8770, ipad: 6600, itouch: 6695},
+				{period: '2016 Q1', iphone: 10820, ipad: 10924, itouch: 12300},
+				{period: '2016 Q2', iphone: 9680, ipad: 9010, itouch: 7891},
+				{period: '2016 Q3', iphone: 4830, ipad: 3805, itouch: 1598},
+				{period: '2016 Q4', iphone: 15083, ipad: 8977, itouch: 5185},
+				{period: '2017 Q1', iphone: 10697, ipad: 4470, itouch: 2038},
+			
+			],
+			lineColors:['#eb6f6f','#926383','#eb6f6f'],
+			xkey: 'period',
+            redraw: true,
+            ykeys: ['iphone', 'ipad', 'itouch'],
+            labels: ['All Visitors', 'Returning Visitors', 'Unique Visitors'],
+			pointSize: 2,
+			hideHover: 'auto',
+			resize: true
+		});
+		
+	   
+	});
+	</script>
+<!-- calendar -->
+	<script type="text/javascript" src="{{ asset('assets/eye/admin/js/monthly.js')}}"></script>
+	<script type="text/javascript">
+		$(window).load( function() {
+
+			$('#mycalendar').monthly({
+				mode: 'event',
+				
+			});
+
+			$('#mycalendar2').monthly({
+				mode: 'picker',
+				target: '#mytarget',
+				setWidth: '250px',
+				startHidden: true,
+				showTrigger: '#mytarget',
+				stylePast: true,
+				disablePast: true
+			});
+
+		switch(window.location.protocol) {
+		case 'http:':
+		case 'https:':
+		// running on a server, should be good.
+		break;
+		case 'file:':
+		alert('Just a heads-up, events will not work when run locally.');
+		}
+
+		});
+	</script>
+	<!-- //calendar -->
 </body>
 </html>

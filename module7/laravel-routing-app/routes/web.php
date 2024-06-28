@@ -11,7 +11,10 @@ use App\Http\Controllers\customer\ProductsController;
 use App\Http\Controllers\customer\ProductsDescriptionsController;
 use App\Http\Controllers\customer\CheckoutController;
 use App\Http\Controllers\customer\PaymentsController;
-
+use App\Http\Controllers\admin\AdminLoginController;
+use App\Http\Controllers\admin\AdminDashboardController;
+use App\Http\Controllers\customer\CustomerAccountController;
+use App\Http\Controllers\admin\AddCategoryController;
 
 
 
@@ -48,3 +51,8 @@ Route::get('/products-descriptions',[ProductsDescriptionsController::class,'inde
 Route::get('/checkout',[CheckoutController::class,'index']);
 
 // admin panel templates integrations routing here
+Route::get('/admin-login',[AdminLoginController::class,'index']);
+Route::get('/admin-login/dashboard',[AdminDashboardController::class,'index']);
+Route::get('/admin-login/manage-customers',[CustomerAccountController::class,'shwcustomeradmin']);
+Route::get('/admin-login/add-category',[AddCategoryController::class,'index']);
+Route::get('/admin-login/manage-category',[AddCategoryController::class,'show']);
