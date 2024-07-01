@@ -55,4 +55,5 @@ Route::get('/admin-login',[AdminLoginController::class,'index']);
 Route::get('/admin-login/dashboard',[AdminDashboardController::class,'index']);
 Route::get('/admin-login/manage-customers',[CustomerAccountController::class,'shwcustomeradmin']);
 Route::get('/admin-login/add-category',[AddCategoryController::class,'index']);
+Route::post('/admin-login/add-category',[AddCategoryController::class,'store']);
 Route::get('/admin-login/manage-category',[AddCategoryController::class,'show']);

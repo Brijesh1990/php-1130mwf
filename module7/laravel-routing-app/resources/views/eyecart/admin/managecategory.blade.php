@@ -12,16 +12,7 @@ Manage all customers
     Manage all Category
     </div>
     <div>
-      <table class="table" ui-jq="footable" ui-options='{
-        "paging": {
-          "enabled": true
-        },
-        "filtering": {
-          "enabled": true
-        },
-        "sorting": {
-          "enabled": true
-        }}'>
+      <table class="table" id="example">
         <thead>
           <tr>
             <th data-breakpoints="xs">ID</th>
@@ -32,14 +23,17 @@ Manage all customers
           </tr>
         </thead>
         <tbody>
+
+          @foreach($data as $row)
           <tr data-expanded="true">
-            <td>1</td>
-            <td>Electronics</td>
-            <td>Good</td>
+            <td>{{$row->id}}</td>
+            <td>{{$row->categoryname}}</td>
+            <td>{{$row->categorydescriptions}}</td>
             <td><a href=""><span class="fa fa-trash text-danger fs-1" style="font-size:25px"></span>
             <a href=""><span class="fa fa-edit text-primary fs-1 ml-5" style="font-size:25px"></span>
         
         </td>
+        @endforeach
           </tr>
         </tbody>
       </table>
@@ -47,4 +41,11 @@ Manage all customers
   </div>
 </div>
 </section>
+
+<!-- scripts for data tables called here -->
+ <script>
+  $(document).ready(function(){
+    new DataTable('#example');
+  })
+</script>
 @endsection 

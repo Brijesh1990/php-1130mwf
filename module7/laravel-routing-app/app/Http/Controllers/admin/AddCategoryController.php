@@ -35,7 +35,25 @@ class AddCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validation rules in add category forms
+        $request->validate([
+        'categoryname'=>'required',
+        'categorydescriptions'=>'required'    
+        ]); 
+
+        // insert data in add category tables used ORM model (object relational mapping model)
+        // Elequent query builders 
+        // ModelName::create();  insert into tablename(columname) values('value')
+        date_default_timezone_set("Asia/Calcutta");
+        $data=array(
+            'categoryname'=>$request->categoryname,
+            'categorydescriptions'=>$request->categorydescriptions
+        );
+
+        // Elequent ORM query builder
+        AddCategoryModel::create($data);
+        //return view('eyecart.admin.addcategory');
+        return redirect('/admin-login/add-category')->with('success','Your Category successfully added');
     }
 
     /**
@@ -46,7 +64,9 @@ class AddCategoryController extends Controller
      */
     public function show()
     {
-        return view('eyecart.admin.managecategory');
+        // Elequent Query ORM model
+        $data=AddCategoryModel::all();
+        return view('eyecart.admin.managecategory',['data'=>$data]);
     }
 
     /**

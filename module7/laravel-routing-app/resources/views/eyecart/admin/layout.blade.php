@@ -21,9 +21,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link rel="stylesheet" href="{{ asset('assets/eye/admin/css/morris.css')}}" type="text/css"/>
 <!-- calendar -->
 <link rel="stylesheet" href="{{ asset('assets/eye/admin/css/monthly.css')}}">
+<!-- data tables css CDN -->
+ <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css" />
+
 <!-- //calendar -->
 <!-- //font-awesome icons -->
 <script src="{{ asset('assets/eye/admin/js/jquery2.0.3.min.js')}}"></script>
+<!-- data tables jquert CDN -->
+ <script src='https://cdn.datatables.net/2.0.8/js/dataTables.js'></script>
 <script src="{{ asset('assets/eye/admin/js/raphael-min.js')}}"></script>
 <script src="{{ asset('assets/eye/admin/js/morris.js')}}"></script>
 </head>
